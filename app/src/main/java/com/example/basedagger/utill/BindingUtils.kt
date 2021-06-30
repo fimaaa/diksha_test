@@ -41,7 +41,7 @@ fun TextView.setHTMLText(value: String?) {
 fun ImageView.setGlideImage(
     imageUrl: String?,
     isRounded: Boolean = false,
-    errorImage: Int? = R.color.colorPrimary
+    errorImage: Int? = R.drawable.ic_image_notfound
 ) {
     val mContext = BaseApplication.applicationContext()
     val radius = mContext.resources.getDimensionPixelSize(R.dimen.dimen_small)
@@ -89,7 +89,7 @@ fun ImageView.setProfileImage(
                 .load(Uri.parse(it))
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .circleCrop()
-                .error(R.drawable.shape_oval)
+                .error(R.drawable.ic_image_notfound)
                 .placeholder(android.R.color.black)
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .skipMemoryCache(true)
@@ -100,7 +100,7 @@ fun ImageView.setProfileImage(
                 .load(it)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .circleCrop()
-                .error(R.drawable.shape_oval)
+                .error(R.drawable.ic_image_notfound)
                 .placeholder(R.drawable.shape_oval)
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .skipMemoryCache(true)
@@ -111,7 +111,7 @@ fun ImageView.setProfileImage(
             .load(R.color.colorPrimary)
             .transition(DrawableTransitionOptions.withCrossFade())
             .circleCrop()
-            .error(R.drawable.shape_oval)
+            .error(R.drawable.ic_image_notfound)
             .placeholder(R.drawable.shape_oval)
             .into(this)
     }
