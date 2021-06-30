@@ -15,13 +15,9 @@ import com.example.basedagger.ui.adapter.photos.AdapterPhotos
 import com.example.basedagger.utill.*
 import com.faltenreich.skeletonlayout.Skeleton
 import com.faltenreich.skeletonlayout.applySkeleton
-import java.net.HttpURLConnection
 
-class ExampleFragment:
-//    Fragment() {
-    BaseFragment() {
-    //    val binding = FragmentExampleBinding.inflate(layoutInflater)
-    private val viewModel: ExampleViewModel by  viewModels()
+class ExampleFragment : BaseFragment() {
+    private val viewModel: ExampleViewModel by viewModels()
     private var _binding: FragmentExampleBinding? = null
     val binding get() = _binding!!
     private var skeleton: Skeleton? = null
@@ -56,18 +52,17 @@ class ExampleFragment:
             skeleton?.showShimmer = true
             skeleton?.showSkeleton()
         }
-
     }
 
     override fun onObserveAction() {
         observe(viewModel.listPhotos) {
             observe(it) { list ->
-                if(list.size > 0 && !(viewModel.search.value.isNullOrEmpty())) skeleton?.showOriginal() else viewModel.fetchDataPhotos()
+                if (list.size > 0 && !(viewModel.search.value.isNullOrEmpty())) skeleton?.showOriginal() else viewModel.fetchDataPhotos()
                 list.let { data -> adapter.setListPhotos(data) }
             }
         }
         observe(viewModel.dataPhotos) {
-            when(it.status) {
+            when (it.status) {
                 Status.LOADING -> {
                 }
                 Status.SUCCESS -> {
@@ -75,7 +70,7 @@ class ExampleFragment:
                 }
                 else -> {
                     skeleton?.showOriginal()
-                    if(adapter.itemCount <= 0) {
+                    if (adapter.itemCount <= 0) {
                         binding.blanklayout.visible()
                         binding.blanklayout.setType(it.code ?: 400, it.message)
                         binding.blanklayout.setOnClick("Retry") {

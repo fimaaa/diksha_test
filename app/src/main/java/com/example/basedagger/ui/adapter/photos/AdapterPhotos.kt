@@ -9,7 +9,7 @@ import org.jetbrains.anko.sdk27.coroutines.onLongClick
 
 class AdapterPhotos(
     private val actionPhotos: (Photos.Data) -> Unit
-): RecyclerView.Adapter<AdapterPhotos.ViewHolder>() {
+) : RecyclerView.Adapter<AdapterPhotos.ViewHolder>() {
     private val listPhotos = mutableListOf<Photos.Data?>()
 
     fun setListPhotos(listPhotos: MutableList<Photos.Data>) {

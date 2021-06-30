@@ -25,7 +25,7 @@ object AppModule {
     @Singleton
     @Provides
     fun provideFavMovieDatabase(
-        @ApplicationContext app:Context
+        @ApplicationContext app: Context
     ) = Room.databaseBuilder(
         app,
         AppDatabase::class.java,
@@ -67,7 +67,6 @@ object AppModule {
             .writeTimeout(1, TimeUnit.MINUTES)
         okHttpClientBuilder.build()
     }
-
 
     @Provides
     @Singleton

@@ -7,8 +7,6 @@ import android.provider.Settings
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.databinding.ViewDataBinding
-import androidx.viewbinding.ViewBinding
 
 abstract class BasePermissionFragment(toolbar: Boolean) :
     BaseFragment(toolbar) {

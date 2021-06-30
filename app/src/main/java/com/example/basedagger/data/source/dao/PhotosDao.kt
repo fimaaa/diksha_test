@@ -16,11 +16,11 @@ interface PhotosDao {
     fun getAllExample(): LiveData<MutableList<Photos.Data>>
 
     @Query("SELECT * FROM photos_table WHERE title LIKE :title")
-    fun getPhotoWith(title:String): LiveData<MutableList<Photos.Data>>
+    fun getPhotoWith(title: String): LiveData<MutableList<Photos.Data>>
 
     @Query("SELECT count(*) FROM photos_table WHERE photos_table.id = :id")
     suspend fun checkExample(id: String): Int
 
-    @Query("DELETE FROM photos_table WHERE photos_table.id = :id" )
-    suspend fun removeExample(id: String) : Int
+    @Query("DELETE FROM photos_table WHERE photos_table.id = :id")
+    suspend fun removeExample(id: String): Int
 }

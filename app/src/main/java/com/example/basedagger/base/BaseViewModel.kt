@@ -2,7 +2,6 @@ package com.example.basedagger.base
 
 import androidx.annotation.CallSuper
 import androidx.lifecycle.ViewModel
-import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.disposables.CompositeDisposable
 import java.lang.ref.WeakReference
 

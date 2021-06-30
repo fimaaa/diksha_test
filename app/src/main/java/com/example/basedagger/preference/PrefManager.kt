@@ -1,4 +1,3 @@
 package com.example.basedagger.preference
 
-interface PrefManager {
-}
+interface PrefManager

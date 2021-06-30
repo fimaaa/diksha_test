@@ -8,19 +8,13 @@ import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import com.example.basedagger.utill.hideKeyboard
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-import kotlin.coroutines.CoroutineContext
 
 @AndroidEntryPoint
 abstract class BaseFragment(
     private val toolbarShow: Boolean = false,
     private val statusBarShow: Boolean = true
-): Fragment() {
-
-//    @Inject
-//    lateinit var prefs: PrefManagerImp
+) : Fragment() {
 
     private lateinit var job: Job
     private lateinit var mainView: MainView

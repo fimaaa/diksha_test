@@ -15,7 +15,7 @@ import javax.inject.Inject
 @HiltViewModel
 class ExampleViewModel @Inject constructor(
     private val repository: PhotosRepository
-): ViewModel() {
+) : ViewModel() {
     val search = MutableLiveData<String>()
     val listPhotos = search.map {
         repository.getPhotosWith(it)
@@ -29,7 +29,7 @@ class ExampleViewModel @Inject constructor(
         _dataPhotos.value = Resource.loading()
         safeApiCall({
             repository.fetchAllPhotos().also { response ->
-                if(response.size > 0) {
+                if (response.size > 0) {
                     _dataPhotos.postValue(
                         Resource.success(response)
                     )

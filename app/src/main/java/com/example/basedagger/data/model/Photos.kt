@@ -13,7 +13,7 @@ object Photos {
         @PrimaryKey
         val id: Int,
         val title: String,
-        val url:String,
+        val url: String,
         val thumbnailUrl: String
-    ): Parcelable
+    ) : Parcelable
 }
