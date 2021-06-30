@@ -7,22 +7,23 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_photos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             android:gravity="center"
-            android:text="@{text}"
             />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv_example"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/search_photos"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_example_recyclerview"
+            tools:listitem="@layout/item_photos"
             />
         <com.example.basedagger.customview.BlankLayout
             android:id="@+id/blanklayout"
@@ -30,6 +31,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="gone"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <data>

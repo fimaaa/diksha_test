@@ -5,7 +5,7 @@ import androidx.room.Room
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.example.basedagger.base.BaseApplication
 import com.example.basedagger.data.local.AppDatabase
-import com.example.basedagger.data.source.endpoint.ExampleApi
+import com.example.basedagger.data.source.endpoint.PhotosApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,7 +34,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideFavMovieDao(db: AppDatabase) = db.getFavoriteMovieDao()
+    fun provideFavMovieDao(db: AppDatabase) = db.getPhotosDao()
 
     @Provides
     @Singleton
@@ -71,6 +71,6 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideMovieApi(retrofit: Retrofit): ExampleApi =
-        retrofit.create(ExampleApi::class.java)
+    fun providePhotoApi(retrofit: Retrofit): PhotosApi =
+        retrofit.create(PhotosApi::class.java)
 }
